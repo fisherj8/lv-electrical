@@ -5,14 +5,14 @@ import { productCategories } from "@/data/products";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-slate-950 text-slate-300">
+    <footer className="border-t border-brand/20 bg-brand-black text-white/70">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="text-lg font-bold text-white">{site.name}</p>
           <p className="mt-2 text-sm leading-relaxed">{site.tagline}</p>
           <p className="mt-4 text-sm">{site.contact.address.full}</p>
           <p className="mt-2 text-sm">
-            <a href={site.contact.phoneHref} className="text-amber-400 hover:text-amber-300">
+            <a href={site.contact.phoneHref} className="text-brand-light hover:text-white">
               {site.contact.phone}
             </a>
           </p>
@@ -45,13 +45,8 @@ export function SiteFooter() {
           <p className="font-semibold text-white">Quick Links</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link href="/sell-equipment" className="font-medium text-amber-400 hover:text-amber-300">
+              <Link href="/sell-equipment" className="font-medium text-brand-light hover:text-white">
                 Sell Your Equipment
-              </Link>
-            </li>
-            <li>
-              <Link href="/inventory" className="hover:text-white">
-                Inventory Search
               </Link>
             </li>
             <li>
@@ -72,8 +67,8 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-slate-800">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-brand/20">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <p>{site.contact.serviceArea} · {site.contact.emergencyHours}</p>
         </div>

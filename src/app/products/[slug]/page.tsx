@@ -49,10 +49,7 @@ export default async function ProductCategoryPage({ params }: Props) {
           ))}
         </div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/inventory" className={cn(buttonVariants())}>
-            Search Inventory
-          </Link>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "outline" }))}>
+          <Link href="/contact" className={cn(buttonVariants(), "bg-brand hover:bg-brand-light")}>
             Request Pricing
           </Link>
         </div>

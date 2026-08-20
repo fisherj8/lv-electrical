@@ -26,12 +26,12 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Phone className="size-5 text-amber-500" />
+                  <Phone className="size-5 text-brand" />
                   Phone
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <a href={site.contact.phoneHref} className="text-xl font-bold text-slate-950 hover:text-amber-600">
+                <a href={site.contact.phoneHref} className="text-xl font-bold hover:text-brand">
                   {site.contact.phone}
                 </a>
               </CardContent>
@@ -39,12 +39,12 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Mail className="size-5 text-amber-500" />
+                  <Mail className="size-5 text-brand" />
                   Email
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <a href={`mailto:${site.contact.email}`} className="hover:text-amber-600">
+                <a href={`mailto:${site.contact.email}`} className="hover:text-brand">
                   {site.contact.email}
                 </a>
               </CardContent>
@@ -52,7 +52,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <MapPin className="size-5 text-amber-500" />
+                  <MapPin className="size-5 text-brand" />
                   Address
                 </CardTitle>
               </CardHeader>
@@ -61,7 +61,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Clock className="size-5 text-amber-500" />
+                  <Clock className="size-5 text-brand" />
                   Hours
                 </CardTitle>
               </CardHeader>

@@ -21,18 +21,18 @@ export function CtaBanner({
   secondaryLabel,
 }: CtaBannerProps) {
   return (
-    <section className="bg-slate-950 text-white">
+    <section className="bg-brand-black text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-14 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-          <p className="mt-3 text-slate-300">{description}</p>
+          <p className="mt-3 text-white/70">{description}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link
             href={primaryHref}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-amber-500 text-slate-950 hover:bg-amber-400"
+              "bg-brand text-white hover:bg-brand-light"
             )}
           >
             {primaryLabel}
@@ -43,7 +43,7 @@ export function CtaBanner({
               href={secondaryHref}
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "border-slate-700 bg-transparent text-white hover:bg-slate-900"
+                "border-brand/50 bg-transparent text-white hover:bg-brand/20"
               )}
             >
               {secondaryLabel}

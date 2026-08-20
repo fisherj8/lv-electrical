@@ -40,7 +40,7 @@ export function SellEquipmentForm() {
   }
 
   return (
-    <Card className="border-amber-500/30 shadow-lg">
+    <Card className="border-brand/30 shadow-lg">
       <CardHeader>
         <CardTitle className="text-2xl">Tell Us What You Have</CardTitle>
         <CardDescription>
@@ -100,7 +100,7 @@ export function SellEquipmentForm() {
               />
             </div>
           </div>
-          <Button type="submit" disabled={loading} size="lg" className="w-full bg-amber-500 text-slate-950 hover:bg-amber-400">
+          <Button type="submit" disabled={loading} size="lg" className="w-full bg-brand text-white hover:bg-brand-light">
             {loading ? "Submitting..." : "Submit Equipment for Quote"}
           </Button>
         </form>

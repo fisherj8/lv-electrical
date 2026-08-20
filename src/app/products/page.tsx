@@ -50,8 +50,6 @@ export default function ProductsPage() {
         description="Our emergency sourcing team locates hard-to-find electrical equipment fast."
         primaryHref="/contact"
         primaryLabel="Request a Quote"
-        secondaryHref="/inventory"
-        secondaryLabel="Search Inventory"
       />
     </>
   );

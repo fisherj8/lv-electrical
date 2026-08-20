@@ -7,8 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 type ContactFormProps = {
   defaultSubject?: string;
@@ -108,40 +106,10 @@ export function ContactForm({
             <Label htmlFor="message">Message *</Label>
             <Textarea id="message" name="message" required rows={5} />
           </div>
-          <Button type="submit" disabled={loading} className="w-full bg-amber-500 text-slate-950 hover:bg-amber-400 sm:w-auto">
+          <Button type="submit" disabled={loading} className="w-full bg-brand text-white hover:bg-brand-light sm:w-auto">
             {loading ? "Sending..." : "Submit Request"}
           </Button>
         </form>
-      </CardContent>
-    </Card>
-  );
-}
-
-export function InventorySearch() {
-  const [query, setQuery] = useState("");
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Inventory Search</CardTitle>
-        <CardDescription>
-          Search our current inventory. Full database integration coming soon.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="flex gap-2">
-          <Input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by SKU, manufacturer, or product..."
-          />
-          <a
-            href={`/inventory?q=${encodeURIComponent(query)}`}
-            className={cn(buttonVariants({ variant: "outline" }))}
-          >
-            Search
-          </a>
-        </div>
       </CardContent>
     </Card>
   );
