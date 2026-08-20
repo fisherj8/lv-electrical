@@ -47,7 +47,7 @@ export default function SellEquipmentPage() {
                 ))}
               </ul>
               <p className="mt-8 text-sm text-slate-600">
-                Submissions are sent to our buying team at {site.contact.formEmail}. For urgent inquiries, call{" "}
+                Submissions are sent to our buying team at {site.contact.email}. For urgent inquiries, call{" "}
                 <a href={site.contact.phoneHref} className="font-semibold text-brand hover:text-brand-light">
                   {site.contact.phone}
                 </a>

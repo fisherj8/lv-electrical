@@ -29,7 +29,7 @@ export async function sendContactEmail(payload: EmailPayload): Promise<{ ok: boo
     },
     body: JSON.stringify({
       from: process.env.EMAIL_FROM ?? "LV Electrical <onboarding@resend.dev>",
-      to: [site.contact.formEmail],
+      to: [site.contact.email],
       subject: payload.subject,
       html: payload.html,
       reply_to: payload.replyTo,

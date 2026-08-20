@@ -7,8 +7,7 @@ export const site = {
   contact: {
     phone: "682-393-1443",
     phoneHref: "tel:+16823931443",
-    email: "Charlie@lvelec.com",
-    formEmail: "charlie@c3-pro.com",
+    email: "Charlie@C3-Pro.com",
     address: {
       street: "1724 N Main St Suite H",
       city: "Weatherford",

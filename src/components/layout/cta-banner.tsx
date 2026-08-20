@@ -21,7 +21,7 @@ export function CtaBanner({
   secondaryLabel,
 }: CtaBannerProps) {
   return (
-    <section className="bg-brand-black text-white">
+    <section className="border-b border-brand/30 bg-brand text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-4 py-14 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
@@ -32,7 +32,7 @@ export function CtaBanner({
             href={primaryHref}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-brand text-white hover:bg-brand-light"
+              "bg-white text-brand-dark hover:bg-white/90"
             )}
           >
             {primaryLabel}
@@ -43,7 +43,7 @@ export function CtaBanner({
               href={secondaryHref}
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "border-brand/50 bg-transparent text-white hover:bg-brand/20"
+                "border-white/50 bg-transparent text-white hover:bg-white/10"
               )}
             >
               {secondaryLabel}

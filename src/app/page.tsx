@@ -24,8 +24,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-brand-black text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(46,90,39,0.35),_transparent_55%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-28">
-          <Badge className="border-brand/40 bg-brand/20 text-brand-light hover:bg-brand/20">
-            North America · Emergency Sourcing Available
+          <Badge className="border-brand-light/30 bg-brand/30 text-white hover:bg-brand/30">
+            Emergency Sourcing Available
           </Badge>
           <h1 className="mt-6 max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">
             {site.tagline}

@@ -19,12 +19,10 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-brand-dark/30 bg-brand-black">
       <div className="border-b border-brand/30 bg-brand-black text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 text-sm">
-          <p className="hidden text-white/70 sm:block">
-            {site.contact.serviceArea} · {site.contact.hours}
-          </p>
+          <p className="hidden text-white/70 sm:block">{site.contact.hours}</p>
           <a
             href={site.contact.phoneHref}
-            className="inline-flex items-center gap-2 font-semibold text-brand-light hover:text-white"
+            className="inline-flex items-center gap-2 font-semibold text-brand-light hover:text-white sm:ml-auto"
           >
             <Phone className="size-4" />
             {site.contact.phone}
