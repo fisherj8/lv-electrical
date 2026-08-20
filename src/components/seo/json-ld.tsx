@@ -7,7 +7,7 @@ export function LocalBusinessJsonLd() {
     name: site.name,
     description: site.description,
     url: site.url,
-    logo: `${site.url}/logo.png`,
+    logo: `${site.url}/icon.png`,
     telephone: site.contact.phone,
     email: site.contact.email,
     address: {

@@ -26,10 +26,6 @@ export const metadata: Metadata = {
       "LV Electrical Supply",
     ],
   }),
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
