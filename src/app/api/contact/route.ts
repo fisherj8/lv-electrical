@@ -10,6 +10,11 @@ export async function POST(request: Request) {
   const message = String(formData.get("message") ?? "").trim();
   const subject = String(formData.get("subject") ?? "Website Inquiry").trim();
   const formType = String(formData.get("formType") ?? "contact").trim();
+  const inquiryType = String(formData.get("inquiryType") ?? "").trim();
+  const inquiryLabels: Record<string, string> = {
+    "equipment-request": "Equipment Request",
+    "sell-equipment": "Sell Equipment",
+  };
 
   if (!name || !email || !phone || !message) {
     return NextResponse.json(
@@ -20,6 +25,7 @@ export async function POST(request: Request) {
 
   const fields: Record<string, string> = {
     "Form Type": formType,
+    "Request Type": inquiryLabels[inquiryType] ?? inquiryType,
     Name: name,
     Company: String(formData.get("company") ?? ""),
     Email: email,

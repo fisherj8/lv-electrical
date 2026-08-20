@@ -18,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Get a Quote"
-        description="Same-day quotes, nationwide shipping, and 24hr emergency sourcing. Reach our team by phone or submit the form below."
+        description="Request a quote, sell surplus equipment, or ask a question — our team responds quickly."
       />
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-10 lg:grid-cols-3">
@@ -72,7 +72,11 @@ export default function ContactPage() {
             </Card>
           </div>
           <div className="lg:col-span-2">
-            <ContactForm formType="quote" />
+            <ContactForm
+              formType="quote"
+              title="Contact Us"
+              description="Select equipment request or sell equipment and tell us what you need."
+            />
           </div>
         </div>
       </section>
