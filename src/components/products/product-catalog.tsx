@@ -12,30 +12,34 @@ type ProductCatalogProps = {
   dark?: boolean;
 };
 
-export function ProductCatalog({ variant = "grouped", dark = false }: ProductCatalogProps) {
+function FeaturedGrid({ dark }: { dark: boolean }) {
   const cardVariant = dark ? "dark" : "light";
 
-  if (variant === "featured") {
-    return (
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {productCategories.slice(0, 6).map((category) => (
-          <ProductCategoryCard key={category.slug} category={category} variant={cardVariant} />
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {productCategories.slice(0, 6).map((category) => (
+        <ProductCategoryCard key={category.slug} category={category} variant={cardVariant} />
+      ))}
+    </div>
+  );
+}
 
-  if (variant === "full") {
-    return (
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {productCategories.map((category) => (
-          <ProductCategoryCard key={category.slug} category={category} variant={cardVariant} />
-        ))}
-      </div>
-    );
-  }
+function FullGrid({ dark }: { dark: boolean }) {
+  const cardVariant = dark ? "dark" : "light";
 
-  const content = (
+  return (
+    <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {productCategories.map((category) => (
+        <ProductCategoryCard key={category.slug} category={category} variant={cardVariant} />
+      ))}
+    </div>
+  );
+}
+
+function GroupedGrid({ dark }: { dark: boolean }) {
+  const cardVariant = dark ? "dark" : "light";
+
+  return (
     <div className="space-y-14">
       {productGroups.map((group) => {
         const categories = getCategoriesForGroup(group);
@@ -64,6 +68,17 @@ export function ProductCatalog({ variant = "grouped", dark = false }: ProductCat
       })}
     </div>
   );
+}
+
+export function ProductCatalog({ variant = "grouped", dark = false }: ProductCatalogProps) {
+  const grid =
+    variant === "featured" ? (
+      <FeaturedGrid dark={dark} />
+    ) : variant === "full" ? (
+      <FullGrid dark={dark} />
+    ) : (
+      <GroupedGrid dark={dark} />
+    );
 
   if (dark) {
     return (
@@ -77,11 +92,11 @@ export function ProductCatalog({ variant = "grouped", dark = false }: ProductCat
             description="All major brands, any age, any condition. Whether you need a single unit or full facility support, we can source it."
             className="mx-auto max-w-3xl text-center"
           />
-          <div className="mt-14">{content}</div>
+          <div className="mt-14">{grid}</div>
         </div>
       </DarkSection>
     );
   }
 
-  return content;
+  return grid;
 }
