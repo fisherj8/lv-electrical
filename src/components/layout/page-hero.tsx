@@ -15,7 +15,7 @@ export function PageHero({
   title,
   description,
   className,
-  imageSrc = heroImages.substation,
+  imageSrc = heroImages.panel,
 }: PageHeroProps) {
   return (
     <section className={cn("relative min-h-[320px] overflow-hidden border-b border-white/10 text-white md:min-h-[380px]", className)}>

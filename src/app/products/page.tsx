@@ -23,7 +23,7 @@ export default function ProductsPage() {
         eyebrow="Products"
         title="Electrical Equipment Catalog"
         description="New and surplus electrical equipment from leading manufacturers. Contact us for pricing and availability on any category below."
-        imageSrc={heroImages.transformer}
+        imageSrc={heroImages.lineup}
       />
       <ProductCatalog variant="grouped" dark />
       <DarkSection className="py-0 pb-20 md:pb-24">

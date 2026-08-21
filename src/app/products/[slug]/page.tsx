@@ -42,7 +42,7 @@ export default async function ProductCategoryPage({ params }: Props) {
         eyebrow="Product Category"
         title={category.name}
         description={category.description}
-        imageSrc={heroImages.grid}
+        imageSrc={heroImages.panel}
       />
       <section className="bg-surface-dark py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">

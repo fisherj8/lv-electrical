@@ -25,7 +25,7 @@ export default function SellEquipmentPage() {
         eyebrow="We Buy Surplus"
         title="Sell Us Your Electrical Equipment"
         description="Turn surplus and decommissioned electrical assets into cash. Upload photos, get a fast evaluation, and let us handle logistics."
-        imageSrc={heroImages.grid}
+        imageSrc={heroImages.lineup}
       />
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-10 lg:grid-cols-5">

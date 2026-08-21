@@ -27,7 +27,7 @@ export function HeroSection({
   primaryLabel,
   secondaryHref,
   secondaryLabel,
-  imageSrc = heroImages.substation,
+  imageSrc = heroImages.lineup,
   className,
 }: HeroSectionProps) {
   return (
@@ -37,7 +37,7 @@ export function HeroSection({
         alt=""
         fill
         priority
-        className="object-cover object-[center_35%]"
+        className="object-cover object-[center_40%]"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(7,11,20,0.94)_0%,rgba(7,11,20,0.78)_50%,rgba(7,11,20,0.55)_100%)]" />
