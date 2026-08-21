@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { heroImages } from "@/lib/hero-images";
+import { darkOutlineButton, darkPrimaryButton } from "@/lib/button-styles";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 
 type HeroSectionProps = {
   badge?: string;
@@ -64,22 +64,13 @@ export function HeroSection({
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">{description}</p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <Link
-            href={primaryHref}
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "h-12 bg-white px-8 text-base font-semibold text-surface-dark hover:bg-white/90"
-            )}
-          >
+          <Link href={primaryHref} className={darkPrimaryButton("h-12 px-8 text-base font-semibold")}>
             {primaryLabel}
           </Link>
           {secondaryHref && secondaryLabel ? (
             <Link
               href={secondaryHref}
-              className={cn(
-                buttonVariants({ size: "lg", variant: "outline" }),
-                "h-12 border-white/40 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/10"
-              )}
+              className={darkOutlineButton("h-12 px-8 text-base font-semibold backdrop-blur-sm")}
             >
               {secondaryLabel}
               <ArrowRight className="size-4" />

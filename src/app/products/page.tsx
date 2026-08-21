@@ -5,8 +5,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/layout/cta-banner";
 import { ProductCatalog } from "@/components/products/product-catalog";
 import { DarkSection } from "@/components/layout/dark-section";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { darkPrimaryButton } from "@/lib/button-styles";
 
 export const metadata = createMetadata({
   title: "Electrical Products",
@@ -35,13 +34,7 @@ export default function ProductsPage() {
                 We also source hard-to-find breakers, controls, disconnects, and complete decommissioning lots.
               </p>
             </div>
-            <Link
-              href="/contact"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "mt-4 bg-white text-surface-dark hover:bg-white/90 md:mt-0"
-              )}
-            >
+            <Link href="/contact" className={darkPrimaryButton("mt-4 md:mt-0")}>
               Request an Offer
             </Link>
           </div>

@@ -7,8 +7,7 @@ import { heroImages } from "@/lib/hero-images";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/layout/cta-banner";
 import { SpecTag } from "@/components/products/spec-tag";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { darkOutlineButton, darkPrimaryButton } from "@/lib/button-styles";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -64,13 +63,10 @@ export default async function ProductCategoryPage({ params }: Props) {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3 border-t border-white/10 pt-8">
-              <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "bg-white text-surface-dark hover:bg-white/90")}>
+              <Link href="/contact" className={darkPrimaryButton()}>
                 Request Pricing
               </Link>
-              <Link
-                href="/products"
-                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "border-white/30 text-white hover:bg-white/10")}
-              >
+              <Link href="/products" className={darkOutlineButton()}>
                 Back to Catalog
               </Link>
             </div>

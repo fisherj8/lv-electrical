@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { darkOutlineButtonSm } from "@/lib/button-styles";
 
 type SectionHeaderProps = {
   eyebrow: string;
@@ -61,9 +62,9 @@ export function SectionHeader({
         <Link
           href={actionHref}
           className={cn(
-            buttonVariants({ variant: "outline" }),
-            "shrink-0 border-brand/25 hover:bg-brand/5",
-            dark && "border-white/20 text-white hover:bg-white/10",
+            dark
+              ? darkOutlineButtonSm("shrink-0")
+              : cn(buttonVariants({ variant: "outline" }), "shrink-0 border-brand/25 hover:bg-brand/5"),
             centered && "mt-2"
           )}
         >

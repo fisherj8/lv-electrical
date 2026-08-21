@@ -2,8 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { heroImages } from "@/lib/hero-images";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { darkOutlineButton, darkPrimaryButton } from "@/lib/button-styles";
 
 type CtaBannerProps = {
   title: string;
@@ -35,24 +34,12 @@ export function CtaBanner({
           <h2 className="text-3xl font-bold tracking-tight md:text-5xl">{title}</h2>
           <p className="mt-4 text-lg leading-relaxed text-white/75">{description}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href={primaryHref}
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "h-12 bg-white px-8 text-base font-semibold text-surface-dark hover:bg-white/90"
-              )}
-            >
+            <Link href={primaryHref} className={darkPrimaryButton("h-12 px-8 text-base font-semibold")}>
               {primaryLabel}
               <ArrowRight className="size-4" />
             </Link>
             {secondaryHref && secondaryLabel ? (
-              <Link
-                href={secondaryHref}
-                className={cn(
-                  buttonVariants({ size: "lg", variant: "outline" }),
-                  "h-12 border-white/40 bg-white/5 px-8 text-base text-white hover:bg-white/10"
-                )}
-              >
+              <Link href={secondaryHref} className={darkOutlineButton("h-12 px-8 text-base font-semibold")}>
                 {secondaryLabel}
               </Link>
             ) : null}
