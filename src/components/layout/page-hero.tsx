@@ -18,7 +18,7 @@ export function PageHero({
   imageSrc = heroImages.panel,
 }: PageHeroProps) {
   return (
-    <section className={cn("relative min-h-[320px] overflow-hidden border-b border-white/10 text-white md:min-h-[380px]", className)}>
+    <section className={cn("relative min-h-[320px] overflow-hidden text-white md:min-h-[380px]", className)}>
       <Image
         src={imageSrc}
         alt=""
@@ -28,7 +28,7 @@ export function PageHero({
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(7,11,20,0.92)_0%,rgba(7,11,20,0.78)_100%)]" />
-      <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-24">
+      <div className="relative mx-auto max-w-7xl px-4 pb-16 hero-content md:pb-24">
         {eyebrow ? (
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-light">{eyebrow}</p>
         ) : null}

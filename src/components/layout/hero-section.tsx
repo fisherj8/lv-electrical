@@ -51,7 +51,7 @@ export function HeroSection({
         }}
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-20 pt-28 md:pb-28 md:pt-36">
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-20 hero-content md:pb-28">
         {badge ? (
           <p className="inline-flex w-fit items-center gap-2 border border-brand-light/40 bg-brand/25 px-3 py-1.5 text-xs font-semibold text-brand-light backdrop-blur-sm">
             <CheckCircle2 className="size-3.5" />

@@ -85,6 +85,7 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.5rem;
+  --site-header-height: 9.25rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -148,5 +149,15 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .hero-content {
+    padding-top: calc(var(--site-header-height) + 1.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-height: 6.75rem;
   }
 }
