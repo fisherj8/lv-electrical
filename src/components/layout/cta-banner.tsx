@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { heroImages } from "@/lib/hero-images";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -23,11 +24,11 @@ export function CtaBanner({
   secondaryHref,
   secondaryLabel,
   highlights,
-  imageSrc = "/images/hero-electrical.jpg",
+  imageSrc = heroImages.powerlines,
 }: CtaBannerProps) {
   return (
-    <section className="relative overflow-hidden">
-      <Image src={imageSrc} alt="" fill className="object-cover" sizes="100vw" />
+    <section className="relative min-h-[420px] overflow-hidden">
+      <Image src={imageSrc} alt="" fill className="object-cover object-center" sizes="100vw" />
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(31,61,26,0.94)_0%,rgba(46,90,39,0.88)_45%,rgba(7,11,20,0.92)_100%)]" />
       <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-24">
         <div className="mx-auto max-w-3xl text-center text-white">

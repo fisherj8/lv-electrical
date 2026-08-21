@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { heroImages } from "@/lib/hero-images";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -26,7 +27,7 @@ export function HeroSection({
   primaryLabel,
   secondaryHref,
   secondaryLabel,
-  imageSrc = "/images/hero-substation.jpg",
+  imageSrc = heroImages.substation,
   className,
 }: HeroSectionProps) {
   return (
@@ -36,7 +37,7 @@ export function HeroSection({
         alt=""
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-[center_35%]"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(7,11,20,0.94)_0%,rgba(7,11,20,0.78)_50%,rgba(7,11,20,0.55)_100%)]" />

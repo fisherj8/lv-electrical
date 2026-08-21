@@ -3,6 +3,7 @@ import Link from "next/link";
 import { createMetadata } from "@/lib/seo";
 import { getProductCategory, productCategories } from "@/data/products";
 import { getProductIcon } from "@/lib/product-icons";
+import { heroImages } from "@/lib/hero-images";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/layout/cta-banner";
 import { SpecTag } from "@/components/products/spec-tag";
@@ -41,7 +42,7 @@ export default async function ProductCategoryPage({ params }: Props) {
         eyebrow="Product Category"
         title={category.name}
         description={category.description}
-        imageSrc="/images/hero-electrical.jpg"
+        imageSrc={heroImages.grid}
       />
       <section className="bg-surface-dark py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4">

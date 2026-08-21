@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createMetadata } from "@/lib/seo";
+import { heroImages } from "@/lib/hero-images";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/layout/cta-banner";
 import { ProductCatalog } from "@/components/products/product-catalog";
@@ -22,7 +23,7 @@ export default function ProductsPage() {
         eyebrow="Products"
         title="Electrical Equipment Catalog"
         description="New and surplus electrical equipment from leading manufacturers. Contact us for pricing and availability on any category below."
-        imageSrc="/images/hero-electrical.jpg"
+        imageSrc={heroImages.transformer}
       />
       <ProductCatalog variant="grouped" dark />
       <DarkSection className="py-0 pb-20 md:pb-24">

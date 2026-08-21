@@ -24,28 +24,16 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "z-50 w-full transition-colors",
-        overlay
-          ? "fixed inset-x-0 top-0 border-b border-white/10 bg-surface-dark/40 backdrop-blur-md"
-          : "sticky top-0 border-b border-border bg-white/95 shadow-sm backdrop-blur-md"
+        "z-50 w-full border-b border-brand/20 bg-brand-black text-white transition-colors",
+        overlay ? "fixed inset-x-0 top-0" : "sticky top-0"
       )}
     >
-      <div
-        className={cn(
-          "border-b",
-          overlay ? "border-white/10 bg-black/20" : "border-border/60 bg-muted/30"
-        )}
-      >
+      <div className="border-b border-brand/20 bg-brand-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 text-sm">
-          <p className={cn("hidden sm:block", overlay ? "text-white/60" : "text-muted-foreground")}>
-            {site.contact.hours}
-          </p>
+          <p className="hidden text-white/60 sm:block">{site.contact.hours}</p>
           <a
             href={site.contact.phoneHref}
-            className={cn(
-              "inline-flex items-center gap-2 font-semibold sm:ml-auto",
-              overlay ? "text-brand-light hover:text-white" : "text-brand hover:text-brand-dark"
-            )}
+            className="inline-flex items-center gap-2 font-semibold text-brand-light hover:text-white sm:ml-auto"
           >
             <Phone className="size-4" />
             {site.contact.phone}
@@ -59,7 +47,7 @@ export function SiteHeader() {
             alt={`${site.name} logo`}
             width={240}
             height={114}
-            className={cn("h-12 w-auto sm:h-14 md:h-16", overlay && "brightness-0 invert")}
+            className="h-12 w-auto sm:h-14 md:h-16"
             priority
           />
         </Link>
@@ -68,12 +56,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                overlay
-                  ? "text-white/80 hover:bg-white/10 hover:text-white"
-                  : "text-foreground/70 hover:bg-muted hover:text-foreground"
-              )}
+              className="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-brand/20 hover:text-white"
             >
               {link.label}
             </Link>
@@ -83,31 +66,18 @@ export function SiteHeader() {
           href="/contact"
           className={cn(
             buttonVariants({ size: "lg" }),
-            "hidden sm:inline-flex",
-            overlay
-              ? "border border-white/30 bg-transparent text-white hover:bg-white/10"
-              : "bg-surface-dark text-white hover:bg-surface-dark/90"
+            "hidden border border-brand/40 bg-brand text-white hover:bg-brand-light sm:inline-flex"
           )}
         >
           Get a Quote
         </Link>
       </div>
-      <nav
-        className={cn(
-          "flex gap-1 overflow-x-auto border-t px-4 py-2 lg:hidden",
-          overlay ? "border-white/10" : "border-border/60"
-        )}
-      >
+      <nav className="flex gap-1 overflow-x-auto border-t border-brand/20 px-4 py-2 lg:hidden">
         {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className={cn(
-              "shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
-              overlay
-                ? "text-white/80 hover:bg-white/10 hover:text-white"
-                : "text-foreground/70 hover:bg-muted hover:text-foreground"
-            )}
+            className="shrink-0 rounded-md px-3 py-1.5 text-xs font-medium text-white/80 transition-colors hover:bg-brand/20 hover:text-white"
           >
             {link.label}
           </Link>

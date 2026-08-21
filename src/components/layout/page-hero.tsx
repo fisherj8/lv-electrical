@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { heroImages } from "@/lib/hero-images";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
@@ -14,11 +15,18 @@ export function PageHero({
   title,
   description,
   className,
-  imageSrc = "/images/hero-industrial.jpg",
+  imageSrc = heroImages.substation,
 }: PageHeroProps) {
   return (
-    <section className={cn("relative overflow-hidden border-b border-white/10 text-white", className)}>
-      <Image src={imageSrc} alt="" fill priority className="object-cover" sizes="100vw" />
+    <section className={cn("relative min-h-[320px] overflow-hidden border-b border-white/10 text-white md:min-h-[380px]", className)}>
+      <Image
+        src={imageSrc}
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(7,11,20,0.92)_0%,rgba(7,11,20,0.78)_100%)]" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-24">
         {eyebrow ? (
