@@ -108,6 +108,42 @@ export function getProductCategory(slug: string): ProductCategory | undefined {
   return productCategories.find((category) => category.slug === slug);
 }
 
+export type ProductGroup = {
+  label: string;
+  description: string;
+  slugs: readonly string[];
+};
+
+export const productGroups: ProductGroup[] = [
+  {
+    label: "Distribution Equipment",
+    description:
+      "Circuit protection, switchgear, panels, busway, and disconnects for reliable power distribution.",
+    slugs: ["breakers", "switchgear", "panels", "busway", "disconnects-safety-switch"],
+  },
+  {
+    label: "Transformers & Power Systems",
+    description: "Transformers, generators, and UPS equipment for backup and primary power.",
+    slugs: ["transformers", "generators", "ups"],
+  },
+  {
+    label: "Controls & Motor Systems",
+    description: "MCC lineups, drives, PLCs, starters, and industrial control components.",
+    slugs: ["mcc", "controls"],
+  },
+  {
+    label: "Facility Infrastructure",
+    description: "Cooling and support equipment for data center and industrial environments.",
+    slugs: ["chillers"],
+  },
+];
+
+export function getCategoriesForGroup(group: ProductGroup): ProductCategory[] {
+  return group.slugs
+    .map((slug) => getProductCategory(slug))
+    .filter((category): category is ProductCategory => category !== undefined);
+}
+
 export type InventoryItem = {
   id: string;
   name: string;

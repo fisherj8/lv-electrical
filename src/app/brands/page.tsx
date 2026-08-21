@@ -1,7 +1,8 @@
 import { createMetadata } from "@/lib/seo";
 import { brands } from "@/data/brands";
 import { PageHero } from "@/components/layout/page-hero";
-import { Badge } from "@/components/ui/badge";
+import { SectionHeader } from "@/components/layout/section-header";
+import { SpecTag } from "@/components/products/spec-tag";
 
 export const metadata = createMetadata({
   title: "Electrical Equipment Brands",
@@ -20,11 +21,16 @@ export default function BrandsPage() {
         description="New and surplus electrical equipment from the industry's most trusted brands."
       />
       <section className="mx-auto max-w-7xl px-4 py-16">
-        <div className="flex flex-wrap gap-3">
+        <SectionHeader
+          eyebrow="Manufacturers"
+          title="All Major Brands"
+          description="We buy and sell equipment from leading electrical and power generation manufacturers nationwide."
+        />
+        <div className="mt-10 flex flex-wrap gap-2">
           {brands.map((brand) => (
-            <Badge key={brand.slug} variant="secondary" className="px-4 py-2 text-base">
+            <SpecTag key={brand.slug} className="bg-card px-4 py-2 text-xs normal-case tracking-normal">
               {brand.name}
-            </Badge>
+            </SpecTag>
           ))}
         </div>
       </section>

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { createMetadata } from "@/lib/seo";
-import { productCategories } from "@/data/products";
 import { PageHero } from "@/components/layout/page-hero";
+import { SectionHeader } from "@/components/layout/section-header";
 import { CtaBanner } from "@/components/layout/cta-banner";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { ProductCatalog } from "@/components/products/product-catalog";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const metadata = createMetadata({
   title: "Electrical Products",
@@ -20,29 +21,27 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Products"
         title="Electrical Equipment Catalog"
-        description="New and surplus electrical equipment from leading manufacturers. Pricing shown on inventory items—contact us for items not yet listed."
+        description="New and surplus electrical equipment from leading manufacturers. Contact us for pricing and availability on any category below."
       />
-      <section className="mx-auto max-w-7xl px-4 py-16">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {productCategories.map((category) => (
-            <Link key={category.slug} href={`/products/${category.slug}`}>
-              <Card className="h-full transition-shadow hover:shadow-md">
-                <CardHeader>
-                  <CardTitle>{category.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground">{category.description}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {category.subcategories.slice(0, 3).map((sub) => (
-                      <Badge key={sub} variant="outline" className="text-xs">
-                        {sub}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+      <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+        <SectionHeader
+          eyebrow="What We Supply"
+          title="Every Type of Power Equipment"
+          description="All major brands, any age, any condition. Whether you need a single unit or full facility support, we can source it."
+        />
+        <div className="mt-12">
+          <ProductCatalog variant="grouped" />
+        </div>
+        <div className="mt-12 border border-border bg-muted/30 p-8 md:flex md:items-center md:justify-between">
+          <div>
+            <h3 className="text-xl font-semibold tracking-tight">Not sure if we have it?</h3>
+            <p className="mt-2 max-w-xl text-sm text-muted-foreground">
+              We also source hard-to-find breakers, controls, disconnects, and complete decommissioning lots.
+            </p>
+          </div>
+          <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "mt-4 bg-brand hover:bg-brand-light md:mt-0")}>
+            Request an Offer
+          </Link>
         </div>
       </section>
       <CtaBanner

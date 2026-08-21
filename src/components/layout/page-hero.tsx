@@ -27,7 +27,7 @@ export function PageHero({
     >
       <div className="mx-auto max-w-7xl px-4 py-14 md:py-20">
         {eyebrow ? (
-          <p className={cn("text-sm font-semibold uppercase tracking-wider text-brand-light", !dark && "text-brand")}>
+          <p className={cn("text-xs font-bold uppercase tracking-[0.2em]", dark ? "text-brand-light" : "text-brand")}>
             {eyebrow}
           </p>
         ) : null}
