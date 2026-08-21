@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
@@ -5,7 +6,7 @@ type PageHeroProps = {
   title: string;
   description: string;
   className?: string;
-  dark?: boolean;
+  imageSrc?: string;
 };
 
 export function PageHero({
@@ -13,28 +14,20 @@ export function PageHero({
   title,
   description,
   className,
-  dark = false,
+  imageSrc = "/images/hero-industrial.jpg",
 }: PageHeroProps) {
   return (
-    <section
-      className={cn(
-        "border-b",
-        dark
-          ? "border-brand/30 bg-brand-black text-white"
-          : "border-brand/10 bg-brand/5 text-foreground",
-        className
-      )}
-    >
-      <div className="mx-auto max-w-7xl px-4 py-14 md:py-20">
+    <section className={cn("relative overflow-hidden border-b border-white/10 text-white", className)}>
+      <Image src={imageSrc} alt="" fill priority className="object-cover" sizes="100vw" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(7,11,20,0.92)_0%,rgba(7,11,20,0.78)_100%)]" />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-24">
         {eyebrow ? (
-          <p className={cn("text-xs font-bold uppercase tracking-[0.2em]", dark ? "text-brand-light" : "text-brand")}>
-            {eyebrow}
-          </p>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-light">{eyebrow}</p>
         ) : null}
-        <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">{title}</h1>
-        <p className={cn("mt-4 max-w-2xl text-lg leading-relaxed", dark ? "text-white/70" : "text-muted-foreground")}>
-          {description}
-        </p>
+        <h1 className="mt-3 max-w-3xl text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+          {title}
+        </h1>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">{description}</p>
       </div>
     </section>
   );

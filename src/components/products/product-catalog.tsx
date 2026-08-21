@@ -4,17 +4,22 @@ import {
   productGroups,
 } from "@/data/products";
 import { ProductCategoryCard } from "@/components/products/product-category-card";
+import { SectionHeader } from "@/components/layout/section-header";
+import { DarkSection } from "@/components/layout/dark-section";
 
 type ProductCatalogProps = {
   variant?: "grouped" | "featured" | "full";
+  dark?: boolean;
 };
 
-export function ProductCatalog({ variant = "grouped" }: ProductCatalogProps) {
+export function ProductCatalog({ variant = "grouped", dark = false }: ProductCatalogProps) {
+  const cardVariant = dark ? "dark" : "light";
+
   if (variant === "featured") {
     return (
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {productCategories.slice(0, 6).map((category) => (
-          <ProductCategoryCard key={category.slug} category={category} />
+          <ProductCategoryCard key={category.slug} category={category} variant={cardVariant} />
         ))}
       </div>
     );
@@ -24,13 +29,13 @@ export function ProductCatalog({ variant = "grouped" }: ProductCatalogProps) {
     return (
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {productCategories.map((category) => (
-          <ProductCategoryCard key={category.slug} category={category} />
+          <ProductCategoryCard key={category.slug} category={category} variant={cardVariant} />
         ))}
       </div>
     );
   }
 
-  return (
+  const content = (
     <div className="space-y-14">
       {productGroups.map((group) => {
         const categories = getCategoriesForGroup(group);
@@ -38,13 +43,20 @@ export function ProductCatalog({ variant = "grouped" }: ProductCatalogProps) {
 
         return (
           <div key={group.label}>
-            <div className="mb-6 max-w-2xl border-l-2 border-brand pl-4">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand">{group.label}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{group.description}</p>
-            </div>
+            {!dark ? (
+              <div className="mb-6 max-w-2xl border-l-2 border-brand pl-4">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand">{group.label}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{group.description}</p>
+              </div>
+            ) : null}
             <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
               {categories.map((category) => (
-                <ProductCategoryCard key={category.slug} category={category} />
+                <ProductCategoryCard
+                  key={category.slug}
+                  category={category}
+                  variant={cardVariant}
+                  groupLabel={dark ? group.label : undefined}
+                />
               ))}
             </div>
           </div>
@@ -52,4 +64,24 @@ export function ProductCatalog({ variant = "grouped" }: ProductCatalogProps) {
       })}
     </div>
   );
+
+  if (dark) {
+    return (
+      <DarkSection>
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeader
+            align="center"
+            dark
+            eyebrow="What We Supply"
+            title="Every Type of Electrical Equipment"
+            description="All major brands, any age, any condition. Whether you need a single unit or full facility support, we can source it."
+            className="mx-auto max-w-3xl text-center"
+          />
+          <div className="mt-14">{content}</div>
+        </div>
+      </DarkSection>
+    );
+  }
+
+  return content;
 }
