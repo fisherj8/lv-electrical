@@ -37,10 +37,27 @@ export async function POST(request: Request) {
     Message: message,
   };
 
+  const photos = formData.getAll("photos").filter((item): item is File => item instanceof File && item.size > 0);
+
+  const attachments = await Promise.all(
+    photos.slice(0, 5).map(async (file) => {
+      const buffer = Buffer.from(await file.arrayBuffer());
+      return {
+        filename: file.name,
+        content: buffer.toString("base64"),
+      };
+    })
+  );
+
+  if (photos.length > 0) {
+    fields.Photos = `${photos.length} file(s) attached`;
+  }
+
   const result = await sendContactEmail({
     subject: `[LV Electrical] ${subject}`,
     html: formatFormFields(fields),
     replyTo: email,
+    attachments: attachments.length > 0 ? attachments : undefined,
   });
 
   return NextResponse.json(result, { status: result.ok ? 200 : 500 });

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -131,6 +132,26 @@ export function ContactForm({
                 name="equipment"
                 placeholder={inquiry.equipmentPlaceholder}
               />
+            </div>
+          ) : null}
+          {formType === "quote" && inquiryType === "sell-equipment" ? (
+            <div className="space-y-2">
+              <Label htmlFor="photos">Upload Photos</Label>
+              <div className="rounded-lg border border-dashed border-border p-6 text-center">
+                <Upload className="mx-auto size-8 text-muted-foreground" />
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Upload equipment photos (JPG, PNG — max 10MB each)
+                </p>
+                <Input
+                  id="photos"
+                  key={inquiryType}
+                  name="photos"
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  className="mt-4"
+                />
+              </div>
             </div>
           ) : null}
           {formType === "call" ? (
