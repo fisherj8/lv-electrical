@@ -157,14 +157,20 @@
   }
 
   .logo-glow {
-    filter: drop-shadow(0 0 3px rgba(120, 220, 90, 0.35))
-      drop-shadow(0 0 8px rgba(61, 117, 52, 0.22));
-    transition: filter 0.3s ease;
+    animation: logo-glow-pulse 2.8s ease-in-out infinite;
+  }
+}
+
+@keyframes logo-glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px rgba(120, 220, 90, 0.3))
+      drop-shadow(0 0 8px rgba(61, 117, 52, 0.18));
   }
 
-  .logo-glow:hover {
-    filter: drop-shadow(0 0 4px rgba(120, 220, 90, 0.45))
-      drop-shadow(0 0 12px rgba(61, 117, 52, 0.28));
+  50% {
+    filter: drop-shadow(0 0 5px rgba(130, 230, 100, 0.48))
+      drop-shadow(0 0 14px rgba(61, 117, 52, 0.3));
   }
 }
 
