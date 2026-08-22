@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/data/site";
+import { SiteLogo } from "@/components/layout/site-logo";
 import { services } from "@/data/services";
 import { productCategories } from "@/data/products";
 
@@ -9,15 +9,7 @@ export function SiteFooter() {
     <footer className="border-t border-brand/30 bg-brand-black text-white/70">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
-          <Link href="/" className="inline-block">
-            <Image
-              src="/logo.png"
-              alt={`${site.name} logo`}
-              width={200}
-              height={95}
-              className="h-12 w-auto"
-            />
-          </Link>
+          <SiteLogo link={false} imageClassName="h-12" />
           <p className="mt-4 text-sm leading-relaxed">{site.tagline}</p>
           <div className="mt-4 space-y-1 text-sm">
             <p>{site.contact.address.full}</p>

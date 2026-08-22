@@ -155,6 +155,19 @@
   .hero-content {
     padding-top: calc(var(--site-header-height) + var(--hero-header-gap));
   }
+
+  .logo-glow {
+    filter: drop-shadow(0 0 4px rgba(120, 220, 90, 0.55))
+      drop-shadow(0 0 14px rgba(61, 117, 52, 0.4))
+      drop-shadow(0 0 28px rgba(46, 90, 39, 0.25));
+    transition: filter 0.3s ease;
+  }
+
+  .logo-glow:hover {
+    filter: drop-shadow(0 0 6px rgba(140, 235, 110, 0.65))
+      drop-shadow(0 0 18px rgba(61, 117, 52, 0.5))
+      drop-shadow(0 0 32px rgba(46, 90, 39, 0.35));
+  }
 }
 
 @media (min-width: 768px) {

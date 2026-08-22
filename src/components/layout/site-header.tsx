@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Phone } from "lucide-react";
 import { site } from "@/data/site";
+import { SiteLogo } from "@/components/layout/site-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -49,16 +49,7 @@ export function SiteHeader() {
         </div>
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:py-4">
-        <Link href="/" className="flex shrink-0 items-center">
-          <Image
-            src="/logo.png"
-            alt={`${site.name} logo`}
-            width={240}
-            height={114}
-            className="h-12 w-auto sm:h-14 md:h-16"
-            priority
-          />
-        </Link>
+        <SiteLogo priority />
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <Link
