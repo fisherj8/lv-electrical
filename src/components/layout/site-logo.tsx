@@ -22,7 +22,7 @@ export function SiteLogo({
       width={240}
       height={114}
       priority={priority}
-      className={cn("logo-glow h-12 w-auto sm:h-14 md:h-16", imageClassName)}
+      className={cn("logo-glow h-14 w-auto sm:h-16 md:h-20", imageClassName)}
     />
   );
 
